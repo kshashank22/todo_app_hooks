@@ -1,0 +1,33 @@
+*{
+    padding:0px;
+}
+ul{
+    background-color:rgb(241, 192, 192);
+    border-radius:5px;
+    margin-top:10px;
+    margin-right:5%;
+    margin-left:20px;
+    padding:5px;
+}
+li{
+    list-style:none;
+    border-radius:5px;
+    margin:10px 10px;
+    background-color: aliceblue;
+    padding:5px;
+}
+.todo-list-items-container{
+    display:flex;
+    justify-content:space-between;
+}
+.todo-list-inputs{
+    margin-bottom:10px;
+    font-size:15px;
+}
+.todo-checkbox{
+    margin-top:13px;
+    margin-right:5px;
+}
+.todo-edit-buttons{
+    background-color:transparent;
+}
