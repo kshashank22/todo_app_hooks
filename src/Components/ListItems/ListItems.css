@@ -2,18 +2,21 @@
     padding:0px;
 }
 ul{
-    background-color:rgb(241, 192, 192);
+    border:2px solid rgb(138, 153, 237);
+    background-color:transparent;
     border-radius:5px;
     margin-top:10px;
     width:90%;
     margin-left:30px;
     padding:5px;
+    overflow-y:auto;
+    height:60%;
 }
 li{
     list-style:none;
     border-radius:5px;
     margin:10px 10px;
-    background-color: aliceblue;
+    background-color: rgb(211, 228, 243);
     padding:5px;
 }
 .todo-list-items-container{
@@ -36,5 +39,8 @@ li{
    font-size:12px;
    background-color:lightgray;
    padding:5px;
-   border-radius:10px; 
+   border-radius:10px;
+}
+.todo-icon-style{
+    color: rgb(147, 147, 245); 
 }

@@ -1,15 +1,14 @@
 import React from 'react'
-import './ListItems.css'
 
-const ListItems=({setTask,taskList,setTaskList,setEditedTask,setToggleButton})=>{
+const CompletedListItems=({setTask,completedList,setCompletedList,setEditedTask,setToggleButton})=>{
   
   const deleteTodoTask=(eachTodo)=>{
-    setTaskList(taskList.filter((eachElement)=>eachElement.id!== eachTodo.id))
+    setCompletedList(completedList.filter((eachElement)=>eachElement.id!== eachTodo.id))
   };
   
   const updateCheckbox=(eachTodo)=>{
-    setTaskList(
-      taskList.map((eachElement)=>{
+    setCompletedList(
+        completedList.map((eachElement)=>{
         if(eachElement.id===eachTodo.id){
           return{...eachElement,status:!eachElement.status}
         }
@@ -19,7 +18,7 @@ const ListItems=({setTask,taskList,setTaskList,setEditedTask,setToggleButton})=>
   }
 
   const updatedText=(eachTodo)=>{
-    const textUpdated=taskList.find((eachElement)=>eachElement.id===eachTodo.id)
+    const textUpdated=completedList.find((eachElement)=>eachElement.id===eachTodo.id)
     setEditedTask(textUpdated.id);
     setToggleButton(false)
     setTask(textUpdated.title)
@@ -27,7 +26,7 @@ const ListItems=({setTask,taskList,setTaskList,setEditedTask,setToggleButton})=>
 
   return (
     <ul>
-        {taskList.map(eachTodo=>
+        {completedList.map(eachTodo=>
             <li key={eachTodo.id} className='todo-list-items-container'>
                 <div>
                 {eachTodo.status?<input type="checkbox" className='todo-checkbox' onChange={()=>updateCheckbox(eachTodo)} checked/>:<input type="checkbox" className='todo-checkbox' onChange={()=>updateCheckbox(eachTodo)}/>}
@@ -48,4 +47,4 @@ const ListItems=({setTask,taskList,setTaskList,setEditedTask,setToggleButton})=>
   )
 }
 
-export default ListItems
+export default CompletedListItems
