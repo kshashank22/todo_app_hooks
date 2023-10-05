@@ -49,14 +49,13 @@ function TodoPage() {
   };
 
   const allTodo=(event)=>{
-    event.preventDefault()
+    event.target.value
     setToggleCompleteButton(false)
     setToggleInCompleteButton(false)
     setToggleAllButton(true)
   }
 
-  const completedTodo=(event)=>{
-    event.preventDefault()
+  const completedTodo=()=>{
     const completedTodo=taskList.filter((eachElement)=>eachElement.status===true)
     setToggleAllButton(false)
     setToggleInCompleteButton(false)
@@ -64,8 +63,7 @@ function TodoPage() {
     setCompletedList(completedTodo)
   }
 
-  const inCompletedTodo=(event)=>{
-    event.preventDefault()
+  const inCompletedTodo=()=>{
     const inCompletedTodo=taskList.filter((eachElement)=>eachElement.status===false)
     setToggleAllButton(false)
     setToggleCompleteButton(false)
@@ -100,11 +98,11 @@ function TodoPage() {
         {taskList.length > 0 && (
           <>
             <div className="todo-filter">
-              <button className="todo-filter-button" onClick={allTodo}>All</button>
-              <button className="todo-filter-button" onClick={completedTodo}>Complete</button>
-              <button className="todo-filter-button" onClick={inCompletedTodo}>InComplete</button>
+              <label><input type="radio" value="All" name="todo" className="todo-filter-input" onChange={allTodo}/>All</label>
+              <label><input type="radio" value="Complete" name="todo" className="todo-filter-input" onChange={completedTodo}/>Complete</label>
+              <label><input type="radio" value="Incomplete" name="todo" className="todo-filter-input" onChange={inCompletedTodo}/>InComplete</label>
             </div>
-
+              
             {toggleAllButton && <ListItems
               setTask={setTask}
               taskList={taskList}
@@ -123,7 +121,7 @@ function TodoPage() {
               setEditedTask={setEditedTask}
               setToggleButton={setToggleButton}/>}
             
-            <div className="todo-add-button-container">
+            <div className="todo-add-button-container todo-clear-button-container">
               <button type="button" onClick={clearTodoList}>
                 Clear All
               </button>

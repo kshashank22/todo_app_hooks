@@ -17,26 +17,25 @@
     width:50%;
     margin-top:30px;
     margin-bottom:10px;
-    background-image:url("https://res.cloudinary.com/dw7ksdscg/image/upload/v1696419473/todo-list-on-clipboard-with-hands-illustration-checklist-document-with-task-to-do-on-board-with-paper-clip-flat-man-hands-holding-pen-and-clipboard-with-todo-list-on-green-background-TDM71B_rjqxfw.jpg");
+    background-color: rgb(242, 236, 205);
     background-size:cover;
-    background-color: rgb(222, 241, 200);
     border-radius:15px;
     padding:10px;
-    height:90%;
+    height:80%;
 }
 .todo-heading{
     margin-bottom:20px;
     text-align: center;
     font-size:30px;
-    color: rgb(250, 245, 245);
+    color: rgb(51, 45, 45);
 }
 .todo-input{
     display:flex;
     justify-content:center;
     width:44vw;
     height:35px;
-    background-color:rgb(178, 234, 215);
-    border:2px solid rgb(91, 222, 179);
+    background-color:rgb(213, 244, 233);
+    border:1px solid rgb(91, 222, 179);
     border-radius: 3px;
     color:black;
     font-size:16px;
@@ -58,7 +57,10 @@
     margin-right:20px;
     margin-left:20px;
 }
-
+.todo-filter-input{
+    margin-left:10px;
+    margin-right:2px;
+}
 @media (max-width:1080px){
     .todo-filter-button{
         margin-right:2px;
@@ -66,3 +68,22 @@
         font-size:12px;
     }
 }
+
+@media (max-height:652px){
+    .todo-heading{
+        margin-bottom:5px;
+    }
+    .todo-add-button-container{
+        margin-top:0px;
+    }
+    .todo-clear-button-container{
+        margin-top:3px;
+    }
+    .todo-input{
+        margin-bottom:1px;
+    }
+    .todo-filter{
+        margin-top:3px;
+    }
+}
+
