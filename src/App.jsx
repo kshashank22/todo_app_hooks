@@ -1,10 +1,10 @@
 import React from 'react'
-import TodoPage from './Pages/TodoPage'
+import TodoAppPage from './Page/TodoAppPage'
 
 function App() {
   return (
     <div>
-      <TodoPage/>
+      <TodoAppPage/>
     </div>
   )
 }
