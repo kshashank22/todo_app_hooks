@@ -65,8 +65,12 @@ function TodoAppPage() {
     }
   }
 
-  const onSaveEdit=()=>{
-    if(editedTodo.trim()!==""){
+  const onSaveEdit=(event)=>{
+    event.preventDefault()
+    if (editedTodo===""){
+      alert("Please provide valid todo")
+    }
+    else if(editedTodo.trim()!==""){
       const updatedTodo=todoList.map((eachElement)=>
         eachElement.id===editedTodoId?{...eachElement,title:editedTodo}:eachElement
         );
